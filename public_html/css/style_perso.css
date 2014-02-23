@@ -1,0 +1,29 @@
+html{
+  margin:0;
+  padding:0;
+  background: url(../images/logo-twitter-ptcroix.jpg) no-repeat center fixed; 
+  background-size: cover;
+}
+body{
+    background-color: transparent !important;
+}
+
+h1{
+	text-align: center;
+}
+
+.form-control{
+	width: 100%;
+}
+
+form{
+	width: 100%;
+}
+
+input{
+   text-align:center;
+}
+
+.hastag_input{
+    margin-bottom: 15px;
+}
