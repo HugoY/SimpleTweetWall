@@ -29,17 +29,17 @@
         $('#message').focus(); //met le focus pour la saisie du message
     });*/
 
-    $('#form').submit(function(event) {
+    /*$('#form').submit(function(event) {
         event.preventDefault();
         socket.emit('newmsg', {message: $('#message').val()});
         $('#message').val(''); //pour éviter le flood...
         $('#message').focus(); //pour remettre le focus
-    });
+    });*/
     
     // Nouveau tweet
     socket.on('newmsg', function(message) {
 
-        var msgtpl = $('#msgtpl').html();
+        var msgtpl = $('#mustache-modele-tweet').html();
 
         $('#messages').append('<div class="message">' + Mustache.render(msgtpl, message) + '</div>');
         var wtf = $('#messages');
