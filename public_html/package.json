@@ -1,0 +1,15 @@
+{
+    "name": "simpletweet-wall-server",
+    "version": "0.0.1",
+    "description": "Simple tweet wall for school project",
+    "dependencies": {
+        "socket.io": "latest",
+        "mustache": "latest",
+		"http":"latest",
+		"json":"latest",
+		"request":"latest",
+		"util":"latest",
+		"jquery":"latest"
+    },
+    "author": "ISTIA - AGI"
+}
