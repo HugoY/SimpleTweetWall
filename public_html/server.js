@@ -23,7 +23,7 @@ var lastId = 0;
 
 var io = require('socket.io').listen(httpServer);
 
-twitterSearchClient.search({'q': '@vincent_voisin','count':20,'since_id':lastId}, function(error, result) {
+/*twitterSearchClient.search({'q': '@vincent_voisin','count':20,'since_id':lastId}, function(error, result) {
     if (error)
     {
         console.log('Error: ' + (error.code ? error.code + ' ' + error.message : error.message));
@@ -49,13 +49,14 @@ twitterSearchClient.search({'q': '@vincent_voisin','count':20,'since_id':lastId}
               io.sockets.emit('newtweet', tweet);
         }
     }
-});
-/*
+});*/
+var lastId = 0;
 io.sockets.on('connection',function(socket) {
     console.log()
   socket.on('search', function(hashtag){
-    console.log("here");
-    twitterSearchClient.search({'q': 'vincent_voisin'}, function(error, result) {
+    console.log("Demande de recherche de hashtag du client");
+    console.log(hashtag);
+    twitterSearchClient.search({'q': hashtag.hashtag, 'since_id':lastId}, function(error, result) {
     if (error)
     {
         console.log('Error: ' + (error.code ? error.code + ' ' + error.message : error.message));
@@ -66,16 +67,19 @@ io.sockets.on('connection',function(socket) {
         var jsonStr = JSON.stringify(result);
     var tweets = JSON.parse(jsonStr);
 
-        console.log(typeof(tweets));
+        //console.log(typeof(tweets));
       //  console.log(result['statuses']['coordinates']);
         for(var id in tweets['statuses']){
             //console.log(tweets['statuses'][id]['user']['name']);
-            console.log(tweets['statuses'][id]['text']);
+            //console.log(tweets['statuses'][id]['text']);
             var tweet = {
                             user: tweets['statuses'][id]['user']['name'],
-                            profilepicture:   tweets['statuses'][id]['user']['profil_image_url'],
+                            profilepicture:   tweets['statuses'][id]['user']['profile_image_url'],
                             text:  tweets['statuses'][id]['text'],
-                            date: tweets['statuses'][id]['create_at']
+                            date: tweets['statuses'][id]['created_at']
+                        }
+                        if(id === 0) {
+                            lastId = tweets['statuses'][id]['id'];
                         }
               io.sockets.emit('newtweet', tweet);
         }
@@ -83,4 +87,4 @@ io.sockets.on('connection',function(socket) {
     });
   });
 
-});*/
+});

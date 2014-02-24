@@ -36,27 +36,26 @@
             </div>
             <!-- TWEETs -->
             <div id="les-tweets">
-                <div class="row tweet" id="mustache-modele-tweet">
+                <div class="row tweet" id="mustache-modele-tweet" style='display:none;'>
                     <div class="col-sm-8 col-sm-offset-2">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <img src="{{url}}" alt="image utilisateur" />@ {{url}} : {{text}} - {{date}}
+                                <img src="{{profilepicture}}" alt="image utilisateur" />@ {{user}} : {{text}} - {{date}}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Add by hugo -->
-        <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
-        <!--<script src="node_modules/mustache/mustache.js"></script>-->
-        <!--<script src="http://localhost:8080/socket.io/socket.io.js"></script>-->
-        <script src="client.js"></script>
-
+       
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
+        
+        <!-- Add by hugo -->
+        <script src="node_modules/mustache/mustache.js"></script>
+        <script src="http://localhost:8080/socket.io/socket.io.js"></script>
+        <script src="client.js"></script>
     </body>
 </html>
