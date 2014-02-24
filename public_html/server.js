@@ -79,6 +79,7 @@ io.sockets.on('connection',function(socket) {
                             date: tweets['statuses'][id]['created_at']
                         }
                         if(id === 0) {
+                            console.log("Suis-je inutile");
                             lastId = tweets['statuses'][id]['id'];
                         }
               io.sockets.emit('newtweet', tweet);
