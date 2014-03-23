@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Simple Tweet Wall</title>
+
+        <!-- Bootstrap -->
+        <link href="css/style_perso.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+          <![endif]-->
+    </head>
+    <body>
+        <div class="page-header">
+            <h1>Simple Tweet Wall <small>Partager le meilleur</small></h1>
+        </div>
+
+        <div class="container">
+            <div class="row hastag_input">
+                <div class="col-sm-4 col-sm-offset-4">
+                    <form role="form" id="hastagform">
+                        <!--<input type="text" class="form-control" placeholder="Hashtag" required>-->
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon">#</span>
+                            <input value="Ukraine" id="hashtag" type="text" class="form-control" placeholder="Hashtag" required>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- TWEET -->
+            <div class="row tweet">
+                <div class="col-sm-6 col-sm-offset-2">
+
+                    <blockquote class="twitter-tweet" lang="fr"><p>En Ukraine, les défis de l&#39;après-Ianoukovitch <a href="http://t.co/s6gbvNhC9I">http://t.co/s6gbvNhC9I</a></p>&mdash; Libération (@liberation_info) <a href="https://twitter.com/liberation_info/statuses/437703178008543234">23 Février 2014</a></blockquote>
+                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+                </div>
+            </div>
+            <div class="row tweet">
+                <div class="col-sm-6 col-sm-offset-4">
+                    <blockquote class="twitter-tweet" lang="fr"><p>Ukraine - Dans la résidence du président déchu <a href="http://t.co/Hxjso2MGyp">http://t.co/Hxjso2MGyp</a></p>&mdash; Paris Match (@ParisMatch) <a href="https://twitter.com/ParisMatch/statuses/437694732857114624">23 Février 2014</a></blockquote>
+                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+            </div>
+            <div class="row tweet">
+                <div class="col-sm-6 col-sm-offset-2">
+                    <blockquote class="twitter-tweet" lang="fr"><p>Rappelons qu&#39;en droit d&#39;asile, l&#39;Ukraine figure toujours sur la liste des pays d&#39;origine sûrs. <a href="http://t.co/X3haHWcH2M">pic.twitter.com/X3haHWcH2M</a></p>&mdash; Maitre Eolas (@Maitre_Eolas) <a href="https://twitter.com/Maitre_Eolas/statuses/437151586708488193">22 Février 2014</a></blockquote>
+                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add by hugo -->
+        <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+        <!--<script src="node_modules/mustache/mustache.js"></script>-->
+        <!--<script src="http://localhost:8080/socket.io/socket.io.js"></script>-->
+        <script src="client.js"></script>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>
